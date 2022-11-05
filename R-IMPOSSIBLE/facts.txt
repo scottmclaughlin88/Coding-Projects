@@ -1,0 +1,2 @@
+seasons : This show has 21 seasons
+episodes : There were 160 total episodes

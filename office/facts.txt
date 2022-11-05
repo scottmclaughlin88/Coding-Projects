@@ -1,0 +1,6 @@
+seasons : The show aired for 9 seasons
+episodes : There were 201 total episodes
+aired : The office aired between 2005-2013
+best : The highest rated show is 'stress relief'
+worst : The lowest rated show is 'get the girl'
+opinions : Scott thinks that Steve Carrel is a pretty funny guy.

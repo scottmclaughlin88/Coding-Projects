@@ -1,0 +1,3 @@
+Scott:0
+John:5
+Charlie:10
