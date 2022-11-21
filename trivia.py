@@ -1,7 +1,8 @@
 from pickle import FALSE
 import random
 
-class Record(): #inside a class, most functions need self declared, just fyi
+#inside a class, most functions need self declared, just fyi
+class Record(): 
     def __init__(self,user,score):
         self.user=user
         self.score=int(score)
@@ -9,7 +10,8 @@ class Record(): #inside a class, most functions need self declared, just fyi
     def __str__(self):
         return self.user + ":" + str(self.score)
 
-    def __repr__(self): #represent (repr)
+#represent (repr)
+    def __repr__(self): 
         return self.user + ":" + str(self.score)
 
 class Database():
@@ -23,8 +25,10 @@ class Database():
         lines = f.readlines()
         f.close()
         for line in lines:
-            line = line.strip() #strip strips blank spaces, lines, etc.
-            user = line.split(":")[0] #0,1 - then 1,1.
+#strip strips blank spaces, lines, etc.
+            line = line.strip() 
+ #0,1 - then 1,1.
+            user = line.split(":")[0]
             score = line.split(":")[1]
             self.records.append(Record(user,score))
         self.sort_records()
