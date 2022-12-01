@@ -68,7 +68,7 @@ population = [adam]
 while print_score < 4:
     print_population(population)
     fittest = get_fittest(population)
-    # print(fittest)
+# print(fittest)
     population = generate_population(fittest)
     generation += 1
     print(f'Gen {generation} current fittest {fittest} with a score of {score(fittest)}')
