@@ -19,7 +19,8 @@ class ShowInfo():
         f = open(self.folder + '/' + fileName, 'r', encoding='utf8') 
         allLines = f.readlines()
         for line in allLines:
-            fields = line.split(':')  #left of colon (keys), right of colon is (values)
+#left of colon (keys), right of colon is (values)
+            fields = line.split(':')  
             dict[fields[0].strip()] = fields[1].strip()
         return dict
 
@@ -29,8 +30,11 @@ class ShowInfo():
     def getRandomImage(self):
         return self.folder + "/images/" + random.choice(self.imageLocations).strip()
 
-    def getFact(self,factName=None): #=None makes this an optional parameter
+#=None makes this an optional parameter
+    def getFact(self,factName=None): 
         if factName not in self.facts:
             return self.facts[random.choice(list(self.facts.keys()))]
-        return self.facts[factName] #returns outside of the if statement (different indentantion)
+#returns outside of the if statement (different indentantion)
+        return self.facts[factName] 
 # office_info = ShowInfo("office")
+
