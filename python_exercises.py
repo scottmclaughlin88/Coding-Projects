@@ -1,4 +1,11 @@
 # # #credit to https://pynative.com/python-dictionary-exercise-with-solutions/
+
+#loops
+#per http://lovelace.augustana.edu/q2a/index.php/4345/whats-the-difference-between-if-elif-and-else
+#if is always first in loop to check if the statement is true.
+#next it goes to elif or else if the statement is false.
+
+
 # # #Convert two lists into a dictionary
 # # #Below are the two lists.
 # # #Write a Python program to convert them into a dictionary in a way that item from list1 is the key and item from list2 is the value
