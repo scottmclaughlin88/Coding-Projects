@@ -30,9 +30,11 @@ def matching_words(string1, string2):
     string1 = string1.lower()
     string2 = string2.lower()
 #Find all of the 5 word combinations in string1
+#We're creating a list of words.
     phrases = []
     string1 = string1.split()
     # for i in
+#range what variable starts.  -1 changes will decrease by 1.
     for i in range(len(string1)-1, 2, -1):
         for y in range(len(string1)-i -1):
             words = []
@@ -41,6 +43,7 @@ def matching_words(string1, string2):
             phrases.append(words)
 
         for phrase in phrases:
+#join whatever character is in it (words, etc)
             if ' '.join(phrase) in string2:
                 print(phrase, 'Plagiarism', i)
                 return
