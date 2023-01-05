@@ -44,19 +44,20 @@ def matching_words(string1, string2):
 
         for phrase in phrases:
 #join whatever character is in it (words, etc)
-            if ' '.join(phrase) in string2:
-                print(phrase, 'Plagiarism', i)
-                return
+            if ' '.join(phrase) in string2:     
+                return phrase
 
 #Never define parameters in the function, defeats the purpose.  
 # string1 = "The quick brown blue dark fox jumped over the lazy dog fence"
 # string2 = "Whales are really big and the quick brown blue dark fox jumped past everything and it was marvelous!"
-file1  = open('text1.txt', 'r')
-string1 = file1.read()
-file2  = open('text2.txt', 'r')
-string2 = file2.read()
+def get_longest_matching_words(filename1,filename2):
 
-matching_words(string1, string2)
+    file1  = open(filename1, 'r')
+    string1 = file1.read()
+    file2  = open(filename2, 'r')
+    string2 = file2.read()
+
+    return matching_words(string1, string2)
 
 #Next, go through each combination and see if it exists in string2    
 

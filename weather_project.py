@@ -4,7 +4,7 @@
 
 import pandas as pd
 
-data = pd.read_csv('climate2.csv')
+
 # print(data)
 
 # minvalue = data['Minimum'].min()
@@ -23,8 +23,22 @@ data = pd.read_csv('climate2.csv')
 
 #Let's find out how many days were there when you had a maximum temperature above 70 or a minimum temperature below 40.
 
-hottest = data[data['Maximum'] > 70]
-coldest = data[data['Minimum'] < 25]
-total_temps = len(hottest) + len(coldest)
+def get_days_above_temperatures(temp):
 
-print(total_temps)
+    data = pd.read_csv('climate2.csv')
+
+    hottest = data[data['Maximum'] > float(temp)]
+    # coldest = data[data['Minimum'] < 25]
+    total_temps = len(hottest)
+
+    return total_temps
+
+def get_days_below_temperatures(temp):
+
+    data = pd.read_csv('climate2.csv')
+
+    hottest = data[data['Minimum'] < float(temp)]
+    # coldest = data[data['Minimum'] < 25]
+    total_temps = len(hottest)
+
+    return total_temps
