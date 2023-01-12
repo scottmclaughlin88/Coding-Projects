@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
+from tkinter import messagebox
 from weather_project import get_days_above_temperatures,get_days_below_temperatures
 from plagariasm_checker import get_longest_matching_words
 
@@ -9,9 +10,29 @@ from plagariasm_checker import get_longest_matching_words
 
 # def get_days_below():
 #     min_result.config(text=get_days_below_temperatures(min_entry.get()))
+def add_file():
+    new_file_frame = Frame(window)
+    new_file_frame.pack()
+    file2_label = Label(new_file_frame,text='File 2',font=('Arial',20))
+    file2_label.pack(side=LEFT)
+
+    #Add input box
+    file2_entry = Entry(new_file_frame)
+    file2_entry.pack(side=LEFT)
+
+    button_explore2 = Button(new_file_frame,
+                            text = "Browse Files",
+                            command = browseFiles2)
+    button_explore2.pack(side=LEFT)
 
 def get_matching_words():
-    plagiarism_result.config(text=get_longest_matching_words(file1_entry.get(),file2_entry.get()))
+    try:
+        file1 = open(file1_entry.get(),'r')
+        file2 = open(file2_entry.get(),'r')
+    except:
+        messagebox.showerror('Check fail','Please provide two text files')
+    # else:
+    #     plagiarism_result.config(text=get_longest_matching_words(file1_entry.get(),file2_entry.get()))
 
 def browseFiles():
     filename = filedialog.askopenfilename(initialdir = r"C:\Users\scott\OneDrive\Python\Coding Projects",
@@ -83,6 +104,8 @@ button_explore = Button(plagiarism_frame1,
                         text = "Browse Files",
                         command = browseFiles)
 button_explore.pack(side=LEFT)
+button_add_file = Button(plagiarism_frame1,text='Add file',command=add_file)
+button_add_file.pack()
 file2_label = Label(plagiarism_frame2,text='File 2',font=('Arial',20))
 file2_label.pack(side=LEFT)
 
